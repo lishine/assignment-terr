@@ -38,6 +38,9 @@ importers:
       swagger-ui-express:
         specifier: 5.0.1
         version: 5.0.1(express@5.1.0)
+      uuid:
+        specifier: ^11.1.0
+        version: 11.1.0
       zod:
         specifier: 3.25.64
         version: 3.25.64
@@ -57,6 +60,9 @@ importers:
       '@types/swagger-ui-express':
         specifier: 4.1.8
         version: 4.1.8
+      '@types/uuid':
+        specifier: ^10.0.0
+        version: 10.0.0
       '@vitest/coverage-v8':
         specifier: 3.2.3
         version: 3.2.3(vitest@3.2.3(@types/node@24.0.1)(tsx@4.20.3)(yaml@2.8.0))
@@ -519,6 +525,9 @@ packages:
 
   '@types/swagger-ui-express@4.1.8':
     resolution: {integrity: sha512-AhZV8/EIreHFmBV5wAs0gzJUNq9JbbSXgJLQubCC0jtIo6prnI9MIRRxnU4MZX9RB9yXxF1V4R7jtLl/Wcj31g==}
+
+  '@types/uuid@10.0.0':
+    resolution: {integrity: sha512-7gqG38EyHgyP1S+7+xomFtL+ZNHcKv6DwNaCZmJmo1vgMugyF3TCnXVg4t1uk89mLNwnLtnY3TpOpCOyp1/xHQ==}
 
   '@vitest/coverage-v8@3.2.3':
     resolution: {integrity: sha512-D1QKzngg8PcDoCE8FHSZhREDuEy+zcKmMiMafYse41RZpBE5EDJyKOTdqK3RQfsV2S2nyKor5KCs8PyPRFqKPg==}
@@ -1454,6 +1463,10 @@ packages:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
 
+  uuid@11.1.0:
+    resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
+    hasBin: true
+
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
@@ -1889,6 +1902,8 @@ snapshots:
     dependencies:
       '@types/express': 5.0.3
       '@types/serve-static': 1.15.8
+
+  '@types/uuid@10.0.0': {}
 
   '@vitest/coverage-v8@3.2.3(vitest@3.2.3(@types/node@24.0.1)(tsx@4.20.3)(yaml@2.8.0))':
     dependencies:
@@ -2887,6 +2902,8 @@ snapshots:
   undici-types@7.8.0: {}
 
   unpipe@1.0.0: {}
+
+  uuid@11.1.0: {}
 
   vary@1.1.2: {}
 
