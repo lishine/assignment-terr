@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react'
 import { create } from 'zustand'
 import type { UseBoundStore } from 'zustand'
 import type { StateCreator, StoreApi } from 'zustand/vanilla'
+import { enableMapSet } from 'immer'
+
+enableMapSet()
 
 export type ZustandStore<T> = UseBoundStore<StoreApi<T>>
 
@@ -81,7 +84,5 @@ export const useZustandCreate = <T>(key: string, initializer: StateCreator<T, []
 		}
 	}, [key])
 
-
-    
 	return useStore
 }

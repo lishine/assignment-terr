@@ -7,36 +7,34 @@ import tseslint from 'typescript-eslint'
 import globals from 'globals'
 
 export default tseslint.config(
-	{ languageOptions: { globals: globals.browser } },
-	eslint.configs.recommended,
-	tseslint.configs.recommended,
-	...fixupConfigRules([
-		{
-			...react,
-			settings: {
-				react: { version: 'detect' },
-			},
-		},
-		reactJsx,
-	]),
-	{
-		plugins: {
-			'react-hooks': reactHooks,
-		},
-		rules: {
-			...reactHooks.configs.recommended.rules,
-			'@typescript-eslint/no-unused-vars': 'off',
-            'arrow-body-style': ['error', 'always'],
-            "react/no-unknown-property": [
+    { languageOptions: { globals: globals.browser } },
+    eslint.configs.recommended,
+    tseslint.configs.recommended,
+    ...fixupConfigRules([
+        {
+            ...react,
+            settings: {
+                react: { version: 'detect' },
+            },
+        },
+        reactJsx,
+    ]),
+    {
+        plugins: {
+            'react-hooks': reactHooks,
+        },
+        rules: {
+            ...reactHooks.configs.recommended.rules,
+            '@typescript-eslint/no-unused-vars': 'off',
+            'react/prop-types': 'off',
+            curly: 'error',
+            'react/no-unknown-property': [
                 2,
                 {
-                  "ignore": [
-                    "jsx"
-                  ]
-                }
-              ]
-            }
-		},
-	},
-	{ ignores: ['dist/'] }
+                    ignore: ['jsx', 'global'],
+                },
+            ],
+        },
+    },
+    { ignores: ['dist/'] }
 )

@@ -1,32 +1,25 @@
 {
-  "singleQuote": true,
-  "trailingComma": "es5",
-  "tabWidth": 4,
-  "semi": false,
-  "printWidth": 120,
-  "arrowParens": "always",
-  "bracketSpacing": true,
-  "jsxSingleQuote": false,
-  "endOfLine": "lf",
-  "useTabs": false,
-  "proseWrap": "preserve",
-  "htmlWhitespaceSensitivity": "css",
-  "quoteProps": "as-needed",
-  "embeddedLanguageFormatting": "auto",
-  "overrides": [
-    {
-      "files": ["*.json", "*.md"],
-      "options": {
-        "tabWidth": 2,
-        "useTabs": false
-      }
-    },
-    {
-      "files": ["*.js", "*.ts", "*.jsx", "*.tsx"],
-      "options": {
-        "tabWidth": 4,
-        "useTabs": true
-      }
-    }
-  ]
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "printWidth": 120,
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "jsxSingleQuote": false,
+    "endOfLine": "lf",
+    "useTabs": false,
+    "proseWrap": "preserve",
+    "htmlWhitespaceSensitivity": "css",
+    "quoteProps": "as-needed",
+    "embeddedLanguageFormatting": "auto",
+    "overrides": [
+        {
+            "files": ["*.json", "*.md"],
+            "options": {
+                "tabWidth": 2,
+                "useTabs": false
+            }
+        }
+    ]
 }
