@@ -1,4 +1,4 @@
-import { useZustandCreate } from '../../utils/use-zustand-create'
+import { useZustandCreate } from '../../utils/useZustandCreate'
 
 export const useTodoStore = () => {
 	const todosStore = useZustandCreate('todoStore', (set, get) => {
