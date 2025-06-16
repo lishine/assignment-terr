@@ -1,7 +1,7 @@
 import { StatusCodes } from 'http-status-codes'
 
-import { ServiceResponse } from '@/common/models/serviceResponse'
-import { logger } from '@/server'
+import { ServiceResponse } from '../../common/models/serviceResponse'
+import { logger } from '../../server'
 
 import { CreateTodoDto, Todo, UpdateTodoDto } from './todoModel'
 import { todoRepository } from './todoRepository'

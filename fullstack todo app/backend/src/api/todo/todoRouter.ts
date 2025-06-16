@@ -3,8 +3,8 @@ import express, { type Router } from 'express'
 import { z } from 'zod'
 import { StatusCodes } from 'http-status-codes'
 
-import { createApiResponse } from '@/api-docs/openAPIResponseBuilders'
-import { validateRequest } from '@/common/utils/httpHandlers'
+import { createApiResponse } from '../../api-docs/openAPIResponseBuilders'
+import { validateRequest } from '../../common/utils/httpHandlers'
 
 import { todoController } from './todoController'
 import { CreateTodoSchema, TodoSchema, UpdateTodoSchema, TodoPathParamsSchema } from './todoModel'
