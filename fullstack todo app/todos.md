@@ -174,7 +174,7 @@
 graph TD
     App[App.tsx] --> TodosPage[Todos.tsx]
 
-    subgraph "State (Zustand - todoStore.ts)"
+    subgraph "State Management (Zustand)"
         TodoStoreState[State: todos[], isLoading, error]
         TodoStoreActions[Actions: fetchTodos, addTodo, removeTodo, updateTodo, toggleTodo]
     end
@@ -183,16 +183,15 @@ graph TD
     TodosPage -->|Calls Actions| TodoStoreActions
 
     TodosPage --> AddTodoFormComponent[AddTodoForm.tsx]
-    TodosPage --> TodoList[Renders List of TodoItem.tsx]
-    TodoList --> TodoItemComp[TodoItem.tsx]
+    TodosPage -->|Renders List| TodoItemComp[TodoItem.tsx]
 
     AddTodoFormComponent -->|Calls addTodo| TodoStoreActions
-    TodoItemComp -->|Calls toggleTodo, removeTodo, updateTodo (via text edit)| TodoStoreActions
+    TodoItemComp -->|Calls toggleTodo, removeTodo, updateTodo| TodoStoreActions
 
     TodoStoreActions -->|HTTP Calls| ApiService[todoApiService.ts]
-    ApiService --> BackendAPI[Backend API (/todos)]
+    ApiService -->|REST API| BackendAPI[Backend API /todos]
 
-    subgraph "Reusable Components (src/components/)"
+    subgraph "Reusable Components"
         ButtonComp[Button.tsx]
         InputComp[Input.tsx]
         CheckboxComp[Checkbox.tsx]
@@ -208,18 +207,26 @@ graph TD
 
 ```mermaid
 graph TD
-    User[End User] --> Frontend{Frontend (React)}
-    Frontend -->|API Calls (HTTP)| BackendAPI{Backend API (Node.js/Express)}
-    BackendAPI --> TodoController[ToDo Controller]
-    TodoController --> TodoService[ToDo Service]
-    TodoService --> TodoRepository[ToDo Repository]
-    TodoRepository -->|In-Memory Store| DataStore[(ToDo Items Array)]
+    User[End User] --> Frontend[Frontend React App]
+    Frontend -->|HTTP Requests| BackendAPI[Express Server]
 
-    subgraph Backend
-        BackendAPI
-        TodoController
-        TodoService
-        TodoRepository
-        DataStore
+    subgraph "Backend Architecture"
+        BackendAPI --> TodoRouter[Todo Router]
+        TodoRouter --> TodoController[Todo Controller]
+        TodoController --> TodoService[Todo Service]
+        TodoService --> TodoRepository[Todo Repository]
+        TodoRepository -->|CRUD Operations| DataStore[(In-Memory Array)]
     end
+
+    subgraph "API Endpoints"
+        GetTodos[GET /todos]
+        PostTodo[POST /todos]
+        PutTodo[PUT /todos/:id]
+        DeleteTodo[DELETE /todos/:id]
+    end
+
+    TodoRouter --> GetTodos
+    TodoRouter --> PostTodo
+    TodoRouter --> PutTodo
+    TodoRouter --> DeleteTodo
 ```
